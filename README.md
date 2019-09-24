@@ -13,6 +13,24 @@ def delete_key(A, key):  # [2,1,2,3],[1,1,2,3]
             A[i] = A[i + 1]
             c += 1
     return len(A) - c
- '''
+  ```
+  complexity: o(n) , space: o(1)
+  
+  2) Write a program which takes as input a sorted atay A of integers and a positiveinteger m,
+and updates A so that if x appears z times in A it appears exactly mn(Z,m) times in A. The update
+to A should be performed in one pass, and no additional storage may be allocated.
+-----------
+```python
+def max_m(A, m): # [2, 2, 2, 2]
+    c = 0
+    for i in range(len(A)):
+        if c == 2 and A[i] == m:
+            A[i] = 0
+
+        if A[i] == m:
+            c += 1
+    return A
+  ```
+complexity: o(n), space: o(1)
 
 
