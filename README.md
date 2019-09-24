@@ -5,7 +5,7 @@ that all occurrences of the input key have been removed and the remaining elemen
 shifted left to fill the emptied indices. Return the number of remaining elements. There are no
 requirements as to the values stored beyond the last valid element.
 ------------------------------------------------------------------------------
-'''python 
+```python
 def delete_key(A, key):  # [2,1,2,3],[1,1,2,3]
     c = 0
     for i in range(len(A)):
