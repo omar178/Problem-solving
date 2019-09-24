@@ -49,6 +49,15 @@ def delete_duplicate(A):
   ```
 complexity: o(n), space: o(1)
 --------
-
+4) Write a program that takes an array A of n numbers, and rearranges A's elements to get a new array having the property that B[0] < B[1] >Bl2, < B[3] > B[4]< B[5] >....
+```python
+def rearrange(A):
+    A.sort()
+    for i in range(1, len(A),2):
+        A[i], A[i + 1] = A[i+1] , A[i]
+    return A
+```
+complexity: o(nlogn), space: o(1)
+-------------------
 
 
