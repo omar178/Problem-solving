@@ -1,5 +1,5 @@
 1) The problem here is to find the max sub array from an array, the problem name is max sum subarray!
-A video that illustrates the problem
+A video that illustrates the problem (Link)[https://www.youtube.com/watch?v=ohHWQf1HDfU]
 ## First Approach
 Brute force simply iterate through diff array sizes then iterate through each element and calculate 
 the sum and just return the max.
