@@ -60,4 +60,40 @@ def rearrange(A):
 complexity: o(nlogn), space: o(1)
 -------------------
 
+5) Write a program which takes as input two strings s and f of bits encoding binary numbers hon return list of s+f
+```python
+def plus_binary(s1, s2):
+    sum = []
+    carry = 0
+    result = 0
+    for i in reversed(range(0, len(s2))):
+        result = carry + s1[i] + s2[i]
+        if result == 2:
+            sum.insert(i, 0)
+            carry = 1
+        elif result == 3:
+            sum.insert(i, 1)
+            carry = 1
+        else:
+            sum.insert(i, result)
+        if i == 0:
+            sum.insert(0, carry)
+    return sum
+
+```
+complexity: o(n), space: o(n)
+-------------------
+6) Write a program which takes an array of n integers, where A[i] denotes the maximum you can advance from index l, and retums whether it is possible to advance to the last index starting from
+the beginning of the array.
+```python
+def can_reach_end(A):
+    i, furthest_reach_so_far, last_index = 0, 0, len(A) - 1
+    while furthest_reach_so_far < last_index and i < last_index:
+        furthest_reach_so_far = max(furthest_reach_so_far,A[i] + i)
+        i += 1
+    return furthest_reach_so_far >= last_index
+
+```
+complexity: o(n), space: o(1)
+---------------
 
