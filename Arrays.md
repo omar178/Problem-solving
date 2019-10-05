@@ -60,6 +60,15 @@ def rearrange(A):
 complexity: o(nlogn), space: o(1)
 -------------------
 
+```python
+def rearrange(A):
+    for i in range(len(A)):
+        A[i:i + 2] = sorted(A[i:i + 2], reverse=i % 2)
+```
+complexity: o(n), space: o(1)
+-------------------
+
+
 5) Write a program which takes as input two strings s and f of bits encoding binary numbers hon return list of s+f
 ```python
 def plus_binary(s1, s2):
