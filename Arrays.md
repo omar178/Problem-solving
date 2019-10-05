@@ -97,3 +97,86 @@ def can_reach_end(A):
 complexity: o(n), space: o(1)
 ---------------
 
+7) Write a program which takes as input a sorted array and updates it so that all duplicates have been
+removed and the remaining elements have been shifted left to fill the emptied indices. Return the
+number of valid elements.
+
+```python 
+def remove_duplicates(A):
+    for i in reversed(range(len(A))):
+        if A[i] == A[i-1]:
+            A.pop(i)
+    return len(A)
+
+```
+complexity: o(n^2), space: o(1)
+---------------
+```python
+def remove_duplicates(A):
+    if not A:
+        return 0
+    write_index = 1
+    for i, _ in enumerate(range(len(A))):
+        if A[write_index - 1] != A[i]:
+            A[write_index] = A[i]
+            write_index += 1
+    return write_index
+```
+complexity: o(n), space: o(1)
+---------------
+
+8) Implement a function which takes as input an array and a key, and updates the array so
+that all occurrences of the input key have been removed and the remaining elements have been
+shifted left to fill the emptied indices. Return the number of remaining elements. There are no
+requirements as to the values stored beyond the last valid element.
+ ```python
+ def remove_element_occurances(A, key):
+    write_index = 0
+    for i, _ in enumerate(range(len(A))):
+        if A[i] != key:
+            A[write_index] = A[i]
+            write_index += 1
+    return write_index
+ ```
+
+complexity: o(n), space: o(1)
+---------------
+
+9) Write program that takes an array denoting the daily stock price, and retums the maximum profit
+that could be made by buying and then selling one share of that stock. There is no need to buy if a no profit is possible.
+
+```python
+def max_profit(prices):
+    max_profit, minimuni_price_so_far = 0,float('Inf')
+    for price in prices:
+        profit = price - minimuni_price_so_far
+        max_profit = max(profit,max_profit)
+        minimuni_price_so_far = min(price,minimuni_price_so_far)
+    return max_profit
+
+```
+complexity: o(n), space: o(1)
+---------------
+
+10) Write a program that computes the maximum profit that can be made by buying and selling a share at most twice. The second buy must be made on another date after the first sale.
+```python
+def buy_and_sell_stock_twice(prices):
+    max_total_profit, minimum_price_so_far = 0, float('inf')
+    first_buy_sell_profits = [0] * len(prices)
+    for i, price in enumerate(range(len(prices))):
+        minimum_price_so_far = min(minimum_price_so_far, price)
+        max_total_profit = max(max_total_profit, price - minimum_price_so_far)
+        first_buy_sell_profits[i] = max_total_profit
+    max_price_so_far = float('-inf')
+    for i, price in reversed(list(enumerate(prices[1:], 1))):
+        max_price_so_far = max(max_price_so_far, price)
+        max_total_profit = max(max_total_profit, max_price_so_far - price + first_buy_sell_profits[i - 1])
+    return max_total_profit
+
+```
+complexity: o(n), space: o(n)
+---------------
+
+
+
+
