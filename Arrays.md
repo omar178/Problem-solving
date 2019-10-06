@@ -203,4 +203,16 @@ def generate_primes(n):
 complexity: o(n), space: o(nloglogn)
 ---------------
 
+12) https://leetcode.com/problems/contains-duplicate
+```python
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        nums.sort()
+        for i in range(1, len(nums)):
+            if nums[i] == nums[i - 1]:
+                return True
+        return False
+```
+complexity: o(nlogn), space: o(1)
+---------------
 
