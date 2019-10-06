@@ -186,6 +186,21 @@ def buy_and_sell_stock_twice(prices):
 complexity: o(n), space: o(n)
 ---------------
 
+11) Write a program that takes an integer argument and retums all the primes between 1 and that
+integer. For example, if the input is 18, you should retum <2,3,5,7,77,13>
 
+```python
+def generate_primes(n):
+    primes = []
+    is_prime = [False, False] + [True] * (n - 1)
+    for p in range(2, n + 1):
+        if is_prime[p]:
+            primes.append(p)
+            for i in range(p, n + 1, p):
+                is_prime[p] = False
+    return primes
+```
+complexity: o(n), space: o(nloglogn)
+---------------
 
 
