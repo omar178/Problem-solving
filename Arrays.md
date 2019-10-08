@@ -215,4 +215,72 @@ class Solution:
 ```
 complexity: o(nlogn), space: o(1)
 ---------------
+13) https://leetcode.com/problems/monotonic-array
+```python
+def isMonotonic(A) -> bool:
+    e = []
+    for i in range(1, len(A)):
+        e.append(A[i] - A[i - 1])
+    if all(i >=0 for i in e) or all(i <=0 for i in e):
+        return True
+    return False
+```
+complexity: o(n), space: o(n)
+---------------
 
+```python
+def isMonotonic(A) -> bool:
+    increasing = True
+    decreasing = True
+    for i in range(1, len(A)):
+        if A[i] > A[i - 1]:
+            decreasing = False
+        if A[i] < A[i - 1]:
+            increasing =False
+    return decreasing or increasing
+
+```
+complexity: o(n), space: o(1)
+---------------
+
+
+14) https://leetcode.com/problems/next-permutation
+
+```python
+def nextPermutation(nums) -> None:
+    """
+    Do not return anything, modify nums in-place instead.
+    """
+    inversion_pt = len(nums) - 2
+    while inversion_pt >= 0 and nums[inversion_pt] > nums[inversion_pt + 1]:
+        inversion_pt -= 1
+    if inversion_pt == -1:
+        nums.sort()
+        sys.exit()
+    for i in reversed(range(inversion_pt + 1, len(nums))):
+        if nums[i] > nums[inversion_pt]:
+            nums[i], nums[inversion_pt] = nums[inversion_pt], nums[i]
+            break
+    nums[inversion_pt + 1:] = reversed(nums[inversion_pt + 1:])
+
+```
+complexity: o(n), space: o(1)
+---------------
+
+15) Prev permutation.
+```python
+
+def prevPermutation(nums) -> None:
+    inversion_pt = len(nums) - 2
+    while inversion_pt >= 0 and nums[inversion_pt] < nums[inversion_pt + 1]:
+        inversion_pt -= 1
+    if inversion_pt == -1:
+        return []
+    for i in reversed(inversion_pt + 1, len(nums)):
+        if nums[inversion_pt] > nums[i]:
+            nums[inversion_pt], nums[i] = nums[i], nums[inversion_pt]
+    nums[inversion_pt+1:] = reversed(nums[inversion_pt+1:])
+
+```
+complexity: o(n), space: o(1)
+---------------
