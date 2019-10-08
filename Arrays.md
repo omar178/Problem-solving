@@ -284,3 +284,32 @@ def prevPermutation(nums) -> None:
 ```
 complexity: o(n), space: o(1)
 ---------------
+
+16) https://leetcode.com/problems/reshape-the-matrix/
+```python 
+class Solution:
+    def matrixReshape(self, nums: List[List[int]], r: int, c: int) -> List[List[int]]:
+        try:
+            x =  [col for row in range(r) for col in range(c)]
+        except:
+            x = nums
+        return x
+
+```
+17) https://leetcode.com/problems/move-zeroes
+```python
+def moveZeroes(nums) -> None:
+    """
+    Do not return anything, modify nums in-place instead.
+    """
+    last_non_zero_index = 0
+    for i in range(len(nums)):
+        if nums[i] != 0:
+            nums[last_non_zero_index] = nums[i]
+            last_non_zero_index += 1
+    for i in range(last_non_zero_index, len(nums)):
+        nums[i] = 0
+    return nums
+
+
+```
