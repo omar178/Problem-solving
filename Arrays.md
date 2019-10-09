@@ -310,6 +310,46 @@ def moveZeroes(nums) -> None:
     for i in range(last_non_zero_index, len(nums)):
         nums[i] = 0
     return nums
-
-
+   ```
+   18) https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
+   ```python
+   def twoSum(numbers, target):
+    map = dict()
+    for i in range(len(numbers)):
+        map[numbers[i]] = i
+    for i in range(len(numbers)):
+        compliment = target - numbers[i]
+        if compliment in map.keys():
+            return map.get(compliment) + 1
+   
+   ```
+19) https://leetcode.com/problems/missing-number
+```python 
+def missingNumber(nums):
+    nums.sort()
+    if nums[0] != 0:
+        return 0
+    elif nums[-1] != len(nums):
+        return len(nums)
+    for i in range(len(nums)):
+        expected_element = nums[i] + 1
+        if nums[i+1] != expected_element:
+            return expected_element
 ```
+complexity: o(nlogn), space: o(1)
+---------------
+
+20) https://leetcode.com/problems/missing-number
+```python
+def missingNumber(nums):
+    missing = len(nums)
+    for i, num in enumerate(nums):
+        missing ^= i ^ num
+    return missing
+```
+complexity: o(n), space: o(1)
+---------------
+
+
+
+
