@@ -30,8 +30,8 @@ def isValid(s):
         return False
             
   ```
-## Complexity: o(n) , space: o(1), 
-## TestCases: "()[]{}" --> True, "([)]" --> False
+### Complexity: o(n) , space: o(1)
+### TestCases: "()[]{}" -> True, "([)]" -> False
 ------------------------------------------------------------------------------
 2) https://leetcode.com/problems/first-unique-character-in-a-string/</br>
 Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
@@ -62,8 +62,8 @@ def firstUniqChar(s):
         
     return -1
 ```
-## Complexity: o(n), space: o(n)
-## TestCases: s = "leetcode" --> 0, s = "loveleetcode" --> 2
+### Complexity: o(n), space: o(n)
+### TestCases: s = "leetcode" -> 0, s = "loveleetcode" -> 2
 ------------------------------------------------------------------------------
 3) https://leetcode.com/problems/valid-palindrome/</br>
 Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
@@ -92,8 +92,8 @@ class Solution(object):
                 
             return True
 ```
-## Complexity: o(n), space: o(1)
-## TestCases: s = "A man, a plan, a canal: Panama" --> true, s = "race a car" --> false
+### Complexity: o(n), space: o(1)
+### TestCases: s = "A man, a plan, a canal: Panama" -> true, s = "race a car" -> false
 ------------------------------------------------------------------------------
 4) https://leetcode.com/problems/implement-strstr/</br>
 Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
@@ -117,8 +117,8 @@ class Solution:
                     continue
         return -1
 ```
-## Complexity: o(n), space: o(1)
-## TestCases: haystack = "hello", needle = "ll" --> 2
+### Complexity: o(n), space: o(1)
+### TestCases: haystack = "hello", needle = "ll" -> 2
 ------------------------------------------------------------------------------
 5) https://leetcode.com/problems/add-strings/</br>
 Given two non-negative integers num1 and num2 represented as string, return the sum of num1 and num2.
@@ -141,5 +141,5 @@ class Solution(object):
             return(r)
         return str(str_to_int(num1,1,0)+str_to_int(num2,1,0))
 ```
-## Complexity: o(log n + log m), space: o(1)
+### Complexity: o(log n + log m), space: o(1)
 ------------------------------------------------------------------------------
