@@ -177,4 +177,5 @@ class Solution(object):
         return sum_in_binary
 ```
 ### Complexity: O(len(a) + len(b)), space: o(1)
+### TestCases: a = "11", b = "1" -> "100", a = "1010", b = "1011" -> "10101"
 ------------------------------------------------------------------------------
