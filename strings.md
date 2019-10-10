@@ -1,10 +1,7 @@
 # Problem-solving
 ## Strings
-1) Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-An input string is valid if:
-Open brackets must be closed by the same type of brackets.
-Open brackets must be closed in the correct order.
-Note that an empty string is also considered valid.
+1) https://leetcode.com/problems/valid-parentheses/</br>
+Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 ```python
 def isValid(s):
     
@@ -36,8 +33,7 @@ def isValid(s):
 ## Complexity: o(n) , space: o(1), 
 ## TestCases: "()[]{}" --> True, "([)]" --> False
 ------------------------------------------------------------------------------
-2) https://leetcode.com/problems/first-unique-character-in-a-string/
-</br>
+2) https://leetcode.com/problems/first-unique-character-in-a-string/</br>
 Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
 ```python
 def firstUniqChar(s):
@@ -69,8 +65,7 @@ def firstUniqChar(s):
 ## Complexity: o(n), space: o(n)
 ## TestCases: s = "leetcode" --> 0, s = "loveleetcode" --> 2
 ------------------------------------------------------------------------------
-3) https://leetcode.com/problems/valid-palindrome/
-</br>
+3) https://leetcode.com/problems/valid-palindrome/</br>
 Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 ```python
 class Solution(object):
@@ -100,8 +95,7 @@ class Solution(object):
 ## Complexity: o(n), space: o(1)
 ## TestCases: s = "A man, a plan, a canal: Panama" --> true, s = "race a car" --> false
 ------------------------------------------------------------------------------
-4) https://leetcode.com/problems/implement-strstr/
-</br>
+4) https://leetcode.com/problems/implement-strstr/</br>
 Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
 ```python
 class Solution:
@@ -126,8 +120,7 @@ class Solution:
 ## Complexity: o(n), space: o(1)
 ## TestCases: haystack = "hello", needle = "ll" --> 2
 ------------------------------------------------------------------------------
-5) https://leetcode.com/problems/add-strings/
-</br>
+5) https://leetcode.com/problems/add-strings/</br>
 Given two non-negative integers num1 and num2 represented as string, return the sum of num1 and num2.
 ```python
 class Solution(object):
