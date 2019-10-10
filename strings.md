@@ -30,7 +30,7 @@ def isValid(s):
         return False
             
   ```
-### Complexity: o(n) , space: o(1)
+### Complexity: O(n) , space: o(1)
 ### TestCases: "()[]{}" -> True, "([)]" -> False
 ------------------------------------------------------------------------------
 2) https://leetcode.com/problems/first-unique-character-in-a-string/</br>
@@ -62,7 +62,7 @@ def firstUniqChar(s):
         
     return -1
 ```
-### Complexity: o(n), space: o(n)
+### Complexity: O(n), space: o(n)
 ### TestCases: s = "leetcode" -> 0, s = "loveleetcode" -> 2
 ------------------------------------------------------------------------------
 3) https://leetcode.com/problems/valid-palindrome/</br>
@@ -92,7 +92,7 @@ class Solution(object):
                 
             return True
 ```
-### Complexity: o(n), space: o(1)
+### Complexity: O(n), space: o(1)
 ### TestCases: s = "A man, a plan, a canal: Panama" -> true, s = "race a car" -> false
 ------------------------------------------------------------------------------
 4) https://leetcode.com/problems/implement-strstr/</br>
@@ -117,7 +117,7 @@ class Solution:
                     continue
         return -1
 ```
-### Complexity: o(n), space: o(1)
+### Complexity: O(n), space: o(1)
 ### TestCases: haystack = "hello", needle = "ll" -> 2
 ------------------------------------------------------------------------------
 5) https://leetcode.com/problems/add-strings/</br>
@@ -141,5 +141,40 @@ class Solution(object):
             return(r)
         return str(str_to_int(num1,1,0)+str_to_int(num2,1,0))
 ```
-### Complexity: o(log n + log m), space: o(1)
+### Complexity: O(len(num1) + len(num2)), space: o(1)
+------------------------------------------------------------------------------
+6) https://leetcode.com/problems/add-binary/</br>
+Given two binary strings, return their sum (also a binary string).
+
+```python
+class Solution(object):
+    def addBinary(self, a, b):
+        """
+        :type a: str
+        :type b: str
+        :rtype: str
+        """
+        return bin(int(a, 2) + int(b, 2))[2:]
+    
+        a_len = len(a)
+        b_len = len(b)
+        
+        sum_in_decimal = 0
+        sum_in_binary = ''
+        
+        for ind in range(len(a)):
+            sum_in_decimal += (int(a[ind]) * (2 ** (a_len - 1 - ind)))
+            
+        for ind in range(len(b)):
+            sum_in_decimal += (int(b[ind]) * (2 ** (b_len - 1 - ind)))
+        
+        if sum_in_decimal == 0:
+            return '0'
+        while sum_in_decimal > 0:
+            sum_in_binary = str(sum_in_decimal % 2) + sum_in_binary
+            sum_in_decimal /= 2
+        
+        return sum_in_binary
+```
+### Complexity: O(len(a) + len(b)), space: o(1)
 ------------------------------------------------------------------------------
