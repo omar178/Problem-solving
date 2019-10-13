@@ -179,3 +179,73 @@ class Solution(object):
 ### Complexity: O(len(a) + len(b)), space: o(1)
 ### TestCases: a = "11", b = "1" -> "100", a = "1010", b = "1011" -> "10101"
 ------------------------------------------------------------------------------
+7) https://leetcode.com/problems/longest-common-prefix/</br>
+Write a function to find the longest common prefix string amongst an array of strings.
+
+```python
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        
+        if len(strs) == 0:
+            return '' 
+        res = ''
+        strs = sorted(strs)
+        for i in strs[0]:
+            if strs[-1].startswith(res+i):
+                res += i
+            else:
+                break
+        return res
+        
+        if len(strs) == 0 or len(strs[0]) == 0:
+            return ""
+        
+        for i in range(len(strs[0])):
+            char = strs[0][i]
+            for j in range(1, len(strs)):
+                if i == len(strs[j]) or strs[j][i] != char:
+                    return strs[0][0:i]
+
+        return strs[0]
+
+```
+### Complexity: O(n * m), space: o(1)
+### TestCases: ["flower","flow","flight"] -> "fl"
+------------------------------------------------------------------------------
+8) https://leetcode.com/problems/length-of-last-word/</br>
+Given a string s consists of upper/lower-case alphabets and empty space characters ' ', return the length of last word in the string.
+```python
+class Solution(object):
+    def lengthOfLastWord(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        
+        if len(s) == 0 :
+            return 0
+
+        # Used to get the last letter index
+        last_letter_index = 0
+        for ind in range(len(s)-1, -1, -1):
+            if s[ind] != ' ':
+                last_letter_index = ind
+                break
+        
+        counter = 0
+        for ind in range(last_letter_index, -1, -1):
+            if s[ind] != ' ':
+                counter += 1
+            else:
+                break
+                
+        return counter
+
+```
+### Complexity: O(len(s)), space: o(1)
+### TestCases: "Hello World" -> 5
+------------------------------------------------------------------------------
