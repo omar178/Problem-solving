@@ -137,4 +137,46 @@ class Solution:
 ```
   complexity: o(n) , space: o(1)
   ------------------------------------------------------------------------------
+7) https://leetcode.com/problems/linked-list-components
+```python
 
+class Solution(object):
+    def numComponents(self, head, G):
+        """
+        :type head: ListNode
+        :type G: List[int]
+        :rtype: int
+        """
+        curr = head
+        Gset = set(G)
+        counter = 0
+        while curr:
+            if (curr.val in Gset) and (getattr(curr.next, 'val', None) not in Gset):
+                counter += 1
+            curr = curr.next
+        return counter
+
+```
+  complexity: o(n^2) , space: o(G)
+  ------------------------------------------------------------------------------
+8) https://leetcode.com/problems/odd-even-linked-list
+```python
+class Solution(object):
+    def oddEvenList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        odd = head 
+        even = head.next
+        even_head = even
+        while (even != None) and (even.next != None):
+            odd.next = even.next
+            odd = odd.next
+            even.next = odd.next
+            even = even.next
+        odd.next = even_head
+        return head
+```
+complexity: o(n) , space: o(1)
+------------------------------------------------------------------------------
