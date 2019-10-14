@@ -350,6 +350,30 @@ def missingNumber(nums):
 complexity: o(n), space: o(1)
 ---------------
 
+21) https://leetcode.com/problems/transpose-matrix/submissions/
+```python
+def transpose(A):
+    """
+    :type A: List[List[int]]
+    :rtype: List[List[int]]
+    """
+    return [[A[i][j] for i in range(len(A))] for j in range(len(A[0]))]
+    
+    n_rows = len(A)
+    n_columns = len(A[0])
+    
+    A_T = [[1]*n_rows for i in range(n_columns)]
+    
+    for row in range(n_columns):
+        for column in range(n_rows):
+            A_T[row][column] = A[column][row]
+            
+    return A_T
+    
+```
+complexity: o(n * m), space: o(1)
+---------------
+
 
 
 
